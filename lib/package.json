@@ -1,8 +1,9 @@
 {
 	"name": "@gky/react-gen-classes",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "className Extender",
 	"main": "index.js",
+	"public":true,
 	"scripts": {
 		"test": "npm run test:jest",
 		"start": "npx nodemon node_modules/@babel/node/bin/babel-node.js src/index.js",
