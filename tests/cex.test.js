@@ -8,12 +8,28 @@ test('cex',()=>{
     {'invalid':_ => false}
   ])
 
-  console.log(str)
+  console.log(`"${str}"`)
 
   str =cex([
     'hello',
     {'valid':_ => true}
   ])
 
-  console.log(str)
+  console.log(`"${str}"`)
+
+  str =cex([
+    'hello',
+    {'valid':_ => true},
+    _=> 'coucou'
+  ])
+
+  console.log(`"${str}"`)
+
+  str =cex([
+    'hello',
+    {'valid':_ => true},
+    _=> ''
+  ])
+
+  console.log(`"${str}"`)
 })

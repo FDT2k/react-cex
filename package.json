@@ -1,5 +1,5 @@
 {
-	"name": "@gky/react-cex",
+	"name": "@gky/react-gen-classes",
 	"version": "0.0.1",
 	"description": "className Extender",
 	"main": "index.js",
