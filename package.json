@@ -2,7 +2,7 @@
 	"name": "@gky/react-cex",
 	"version": "0.0.1",
 	"description": "className Extender",
-	"main": "src/index.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "npm run test:jest",
 		"start": "npx nodemon node_modules/@babel/node/bin/babel-node.js src/index.js",
