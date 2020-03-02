@@ -1,0 +1,53 @@
+{
+	"name": "@gky/react-cex",
+	"version": "0.0.1",
+	"description": "className Extender",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "npm run test:jest",
+		"start": "npx nodemon node_modules/@babel/node/bin/babel-node.js src/index.js",
+		"distclean": "rm -rf ./lib",
+		"build": "node_modules/@babel/cli/bin/babel.js --out-dir lib ./src && cp package.json ./lib",
+		"build:clean": "npm run distclean; npm run build",
+		"build:patch": "npm run build && npm version patch",
+		"build:minor": "npm run build && npm version minor",
+		"build:major": "npm run build && npm version major",
+		"pub": "cd ./lib;npm publish; cd ..",
+		"test:jest": "npx jest",
+		"test:jest:watch": "npx jest --watchAll"
+	},
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.5",
+		"@babel/node": "^7.5.0",
+		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
+		"@babel/preset-env": "^7.4.5",
+		"babel-plugin-lodash": "^3.3.4",
+		"babel-preset-minify": "^0.5.0",
+		"nodemon": "^2.0.2",
+		"babel-eslint": "^10.0.2",
+		"babel-jest": "^24.9.0",
+		"eslint": "^5.16.0",
+		"jest": "^24.8.0",
+		"jest-coverage-badges": "^1.1.2"
+	},
+	"dependencies": {
+		"@geekagency/composite-js": "^0.7.1"
+	},
+	"jest": {
+		"transform": {
+			".*": "<rootDir>/node_modules/babel-jest"
+		},
+		"moduleFileExtensions": [
+			"js",
+			"es6"
+		],
+		"coverageReporters": [
+			"json-summary",
+			"text",
+			"lcov"
+		]
+	}
+}

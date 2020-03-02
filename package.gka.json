@@ -1,0 +1,22 @@
+{
+  "project_name": "react-cex",
+  "node":{
+    "dist_folder":"dist"
+  },
+  "services": [
+    {
+      "path": ".",
+      "registry_key": "",
+      "recipes": [
+        "/home/fabien/Documents/work/gka-ms-catalog/src/recipes/package_json/babel-node-build",
+        "/home/fabien/Documents/work/gka-ms-catalog/src/recipes/package_json/jest-es6"
+
+      ]
+    }
+
+
+  ],
+  "deploy": {
+
+  }
+}
