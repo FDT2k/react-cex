@@ -1,4 +1,4 @@
-import {map,compose,curry,_either,is_type_string,is_type_object,is_type_function,identity,keys,joinList,prop} from '@geekagency/composite-js'
+import {map,compose,curry,_either,is_type_string,is_type_object,is_type_function,identity,keys,joinList} from '@geekagency/composite-js'
 
 /*
 Easy class concat
@@ -14,7 +14,7 @@ const resolveObjectProp =  curry((object,prop) =>object[prop]() ? prop:'');
 
 const resolveObject = x=> compose(trim,assemble, map(resolveObjectProp(x)),keys)(x)
 
-const resolveFunction = x => x();
+const resolveFunction = x => _either(is_type_string, x=>'', identity)(x());
 
 // defaultResolver :: String Object => string
 const defaultResolver = compose(
