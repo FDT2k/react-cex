@@ -1,9 +1,9 @@
-import cex from '../src/index'
+import {cEx, uEx} from '../src/index'
 
 
-test('cex',()=>{
+test('cEx',()=>{
 
-  let str =cex([
+  let str =cEx([
     'hello',
     {'invalid':_ => false}
   ])
@@ -12,7 +12,7 @@ test('cex',()=>{
 
   expect(str).toEqual('hello')
 
-  str =cex([
+  str =cEx([
     'hello',
     {'valid':_ => true}
   ])
@@ -20,7 +20,7 @@ test('cex',()=>{
   console.log(`"${str}"`)
   expect(str).toEqual('hello valid')
 
-  str =cex([
+  str =cEx([
     'hello',
     {'valid':_ => true},
     _=> 'coucou'
@@ -29,7 +29,7 @@ test('cex',()=>{
   console.log(`"${str}"`)
   expect(str).toEqual('hello valid coucou')
 
-  str =cex([
+  str =cEx([
     'hello',
     {'valid':_ => true},
     _=> ''
@@ -37,7 +37,7 @@ test('cex',()=>{
 
   console.log(`"${str}"`)
   expect(str).toEqual('hello valid')
-  str =cex([
+  str =cEx([
     'hello',
     {'valid':_ => true},
     _=> false
@@ -45,5 +45,64 @@ test('cex',()=>{
 
   console.log(`"${str}"`)
   expect(str).toEqual('hello valid')
+
+})
+
+test('uex',()=>{
+
+  let str =uEx([
+    'http://google.com',
+  ])
+
+  expect(str).toEqual('http://google.com')
+
+
+  str =uEx([
+    'http://google.com',
+    'hello'
+  ])
+
+  console.log(str)
+  expect(str).toEqual('http://google.com/hello')
+  str =uEx([
+    'http://google.com',
+    {'hello': _=> false},
+    {'hello2': _=> false},
+  ])
+
+  console.log(str)
+  expect(str).toEqual('http://google.com')
+
+  str =uEx([
+    'http://google.com',
+    {'hello': _=> false},
+    {'hello2': _=> true},
+  ])
+
+  console.log(str)
+  expect(str).toEqual('http://google.com/hello2')
+
+
+    str =uEx([
+      'http://google.com',
+      {'hello': _=> false},
+      {'hello2': _=> true},
+      _=> false,
+    ])
+
+    console.log(str)
+    expect(str).toEqual('http://google.com/hello2')
+
+
+        str =uEx([
+          'http://google.com',
+          {'hello': _=> false},
+          {'hello2': _=> true},
+          _=> 'blabla',
+        ])
+
+        console.log(str)
+        expect(str).toEqual('http://google.com/hello2/blabla')
+
 
 })
