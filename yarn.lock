@@ -717,10 +717,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@geekagency/composite-js@^0.7.2":
-  version "0.7.2"
-  resolved "http://192.168.64.135:4873/@geekagency%2fcomposite-js/-/composite-js-0.7.2.tgz#ba103cce573d57cbd8014367c826e32d374ccdd2"
-  integrity sha512-QJAkVc+Ts9mFgkc68QPHjfPhVQswPVfWGLKwWosD3Zzmob76qPpRrB6/dYg48K6tOxPwjzmwVGhFuxJB8WAYvQ==
+"@geekagency/composite-js@^2.0.19":
+  version "2.0.19"
+  resolved "http://192.168.64.135:4873/@geekagency%2fcomposite-js/-/composite-js-2.0.19.tgz#c63d6f5de9cf7b402f49b2871e1836332f16936c"
+  integrity sha512-YZHNCwn2rJZSa2Z4HWOd1gSer4uCE7ODZIzpBgfHr3cf2FN16h1RDDCykz/BD9eQqG4sql+MIsEYVzP8y1RZug==
 
 ansi-styles@^3.2.1:
   version "3.2.1"
